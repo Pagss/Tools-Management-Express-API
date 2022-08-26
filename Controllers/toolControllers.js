@@ -14,7 +14,7 @@ const newTool = async (req, res) => {
   // add to the database
   try {
     if (tags.length > 8) {
-      res.status(400).json({ error: "tags must contain 8 elements at most" });
+      res.status(400).json({ error: "tags elements exceeds the limit(8)" });
       return;
     } else {
       const tool = await Tool.create({ title, link, description, tags });
@@ -54,7 +54,7 @@ const updateTool = async (req, res) => {
 
   try {
     if (req.body.tags.length > 8) {
-      res.status(400).json({ error: "tags must contain 8 elements at most" });
+      res.status(400).json({ error: "tags elements exceeds the limit(8)" });
       return;
     } else {
       const tool = await Tool.findByIdAndUpdate(id, { ...req.body });
