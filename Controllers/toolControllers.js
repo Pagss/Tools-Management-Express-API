@@ -13,6 +13,7 @@ const newTool = async (req, res) => {
 
   // add to the database
   try {
+    // Validate array limit
     if (tags.length > 8) {
       res.status(400).json({ error: "tags elements exceeds the limit(8)" });
       return;
@@ -22,6 +23,7 @@ const newTool = async (req, res) => {
       return;
     }
   } catch (error) {
+    // Return Model error
     res.status(400).json({ error: error.message });
     return;
   }
@@ -31,6 +33,7 @@ const newTool = async (req, res) => {
 const getTool = async (req, res) => {
   const id = req.params.id;
 
+  // Validate ObjectId
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such tool" });
   }
@@ -48,11 +51,13 @@ const getTool = async (req, res) => {
 const updateTool = async (req, res) => {
   const id = req.params.id;
 
+  // Validate ObjectId
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such tool" });
   }
 
   try {
+    // Validate array limit
     if (req.body.tags.length > 8) {
       res.status(400).json({ error: "tags elements exceeds the limit(8)" });
       return;
@@ -66,6 +71,7 @@ const updateTool = async (req, res) => {
       res.status(200).json(updatedTool);
     }
   } catch (error) {
+    // Return Model error
     res.status(400).json({ error: error.message });
     return;
   }
@@ -75,6 +81,7 @@ const updateTool = async (req, res) => {
 const deleteTool = async (req, res) => {
   const id = req.params.id;
 
+  // Validate ObjectId
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({ error: "No such tool" });
   }
