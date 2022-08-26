@@ -6,11 +6,11 @@ const mongoose = require("mongoose");
 // express app
 const app = express();
 
-//middleware
-app.use(express.json()); //access req.body
+// middleware
+app.use(express.json()); // access req.body
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
+  console.log(req.path, req.method); // Development test information
   next();
 });
 
