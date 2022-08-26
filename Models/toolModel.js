@@ -10,7 +10,7 @@ const toolSchema = new Schema({
   //"max 256 char",
   description: { type: String, required: true, maxLength: 256 },
   //"array de min 0, max 8",
-  tags: { type: [{ type: String }] },
+  tags: { type: [{ type: String }], required: true },
 });
 
 module.exports = mongoose.model("Tool", toolSchema);

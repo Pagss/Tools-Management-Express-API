@@ -1,7 +1,3 @@
-const express = require("express");
-
-const router = express.Router();
-
 const Tool = require("../Models/toolModel");
 
 //GET all tools
@@ -10,24 +6,10 @@ router.get("/", (req, res) => {
 });
 
 //POST new tool
-router.post("/", async (req, res) => {
+router.post("/", (req, res) => {
   const { title, link, description, tags } = req.body;
   console.log(title, link, description, tags);
-
-  // add to the database
-  try {
-    if (tags.length > 8) {
-      res.status(400).json({ error: "tags must have 8 elements at most" });
-      return;
-    } else {
-      const tool = await Tool.create({ title, link, description, tags });
-      res.status(200).json(tool);
-      return;
-    }
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-    return;
-  }
+  res.json({ mssg: req.body });
 });
 
 //GET one tool by id
@@ -44,5 +26,3 @@ router.patch("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   res.json({ mssg: "one tool DELETE" });
 });
-
-module.exports = router;
