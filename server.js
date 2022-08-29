@@ -2,9 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const toolsRoutes = require("./Routes/tools");
 const mongoose = require("mongoose");
+const path = require("path");
 
 // express app
-const app = express();
+const app = require("./app");
 
 // middleware
 app.use(express.json()); // access req.body
@@ -29,3 +30,8 @@ const db = mongoose
   .catch((err) => {
     console.log(err);
   });
+
+// API map
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "/api.html"));
+});

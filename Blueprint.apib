@@ -1,0 +1,70 @@
+FORMAT: 1A
+
+# ToolsManagement
+
+Tools Management é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
+
+
+# Group Tools
+
+Recursos relacionados à Tools na API.
+
+
+## Tools Collection [/api/tools/]
+
+
+### Lista todas as Tools [GET]
+
+Retorna uma lista com todas as Tools cadastradas.
+
++ Response 200 (application/json)
+
+
+### Criar nova Tool [POST]
+
+Cadastra uma nova Tool.
+Recebe um objeto JSON contendo uma Tool, seu link, descrição e tags relacionadas.
+
++ Request (application/json)
+
+    + title (string, required, lowercase, unique) - Título da Tool.
+    + link (string, required) - Link para a Tool.
+    + description (string, required) - A descrição da Tool deve conter no máximo 256 caracteres.  
+    + tags (array[string], required) - Tags deve conter uma lista com 0 a 8 tags correspondentes.
+
++ Response 201 (application/json)
++ Response 400 (application/json)
+
+
+## Tool [/api/tools/tool_id]
+
++ Parameters
+    + tool_id (string) - ID da Tool na forma de string.
+
+
+### Uma Tool detalhada [GET]
+
+Retorna uma Tool.
+
++ Response 200 (application/json)
++ Response 404 (application/json)
+
+### Deletar uma Tool [DELETE]
+
+Deleta uma Tool.
+
++ Response 200 (application/json)
++ Response 404 (application/json)
+
+### Update uma Tool [PATCH]
+
+Atualiza propriedades de uma Tool.
+
++ Request (application/json)
+    + title (string, lowercase, unique) - O título da Tool deve ser único.
+    + link (string) - Link para a Tool.
+    + description (string) - A descrição da Tool deve conter no máximo 256 caracteres.  
+    + tags (array[string]) - Tags deve conter uma lista com 0 a 8 tags correspondentes.
++ Response 200 (application/json)
++ Response 400 (application/json)
++ Response 404 (application/json)

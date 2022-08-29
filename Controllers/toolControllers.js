@@ -19,7 +19,7 @@ const newTool = async (req, res) => {
       return;
     } else {
       const tool = await Tool.create({ title, link, description, tags });
-      res.status(200).json(tool);
+      res.status(201).json(tool);
       return;
     }
   } catch (error) {
@@ -44,7 +44,7 @@ const getTool = async (req, res) => {
     return res.status(404).json({ error: "No such tool" });
   }
 
-  res.json(tool);
+  res.status(200).json(tool);
 };
 
 //UPDATE one tool by id
