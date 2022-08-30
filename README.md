@@ -18,6 +18,8 @@ com seus respectivos nomes, links, descrições e tags.
    Dentro deste arquivo, crie uma variavel global chamada DBSTRING e atribua a ela o valor de sua string de conexão que foi criada usando MongoDB, substituindo <password> pela sua senha.
 
 6. Execute a apliação através do comando "node server.js" no terminal.
+   
+7. Abra http://localhost:3000/ no seu navegador para informações sobre rotas.
 
 ## Ferramentas
 
