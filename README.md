@@ -21,6 +21,11 @@ com seus respectivos nomes, links, descrições e tags.
    
 7. Abra http://localhost:3000/ no seu navegador para informações sobre rotas.
 
+
+## Testes
+
++ Para executar os testes unitários, execute o comando "npm test" no terminal.
+
 ## Ferramentas
 
 ### Nodemon
