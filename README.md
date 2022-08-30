@@ -15,7 +15,7 @@ com seus respectivos nomes, links, descrições e tags.
    Copie sua string de conexão.
 
 5. Crie um arquivo chamado ".env" dentro da pasta Tools-Management-Express-API.
-   Dentro deste arquivo, crie uma variavel global chamada DBSTRING e atribua a ela o valor de sua string de conexão que foi criada usando MongoDB, substituindo <password> pela sua senha.
+   Dentro deste arquivo, crie uma variável global chamada DBSTRING e atribua a ela o valor de sua string de conexão, que foi criada usando MongoDB, substituindo "<password>" pela sua senha.
 
 6. Execute a apliação através do comando "node server.js" no terminal.
    
