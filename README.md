@@ -7,17 +7,17 @@ com seus respectivos nomes, links, descrições e tags.
 
 1. Clone o repositório.
 
-2. Cd na pasta Backend.
+2. Cd na pasta Tools-Management-Express-API.
 
 3. Execute o comando "npm install" no terminal.
 
 4. Crie uma coleção em um banco de dados usando MongoDB.
    Copie sua string de conexão.
 
-5. Crie um arquivo chamado ".env" dentro da pasta Backend.
+5. Crie um arquivo chamado ".env" dentro da pasta Tools-Management-Express-API.
    Dentro deste arquivo, crie uma variavel global chamada DBSTRING e atribua a ela o valor de sua string de conexão que foi criada usando MongoDB, substituindo <password> pela sua senha.
 
-6. Execute a apliação através do comando "node server.js".
+6. Execute a apliação através do comando "node server.js" no terminal.
 
 ## Ferramentas
 
