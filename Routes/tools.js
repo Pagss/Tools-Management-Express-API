@@ -6,6 +6,7 @@ const {
   allTools,
   newTool,
   getTool,
+  updateTool,
   deleteTool,
 } = require("../Controllers/toolControllers");
 
@@ -17,6 +18,9 @@ router.post("/", newTool);
 
 //GET one tool by id
 router.get("/:id", getTool);
+
+//UPDATE one tool by id
+router.patch("/:id", updateTool);
 
 //DELETE one tool by id
 router.delete("/:id", deleteTool);

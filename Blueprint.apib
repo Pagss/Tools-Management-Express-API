@@ -56,3 +56,15 @@ Deleta uma Tool.
 + Response 200 (application/json)
 + Response 404 (application/json)
 
+### Update uma Tool [PATCH]
+
+Atualiza propriedades de uma Tool.
+
++ Request (application/json)
+    + title (string, lowercase, unique) - O título da Tool deve ser único.
+    + link (string) - Link para a Tool.
+    + description (string) - A descrição da Tool deve conter no máximo 256 caracteres.  
+    + tags (array[string]) - Tags deve conter uma lista com 0 a 8 tags correspondentes.
++ Response 200 (application/json)
++ Response 400 (application/json)
++ Response 404 (application/json) 

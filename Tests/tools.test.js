@@ -85,7 +85,7 @@ describe("Test /api/tools/", () => {
       });
 
     expect(response.body).toEqual({
-      error: "tags elements exceeds the limit(8)",
+      error: "Tool validation failed: tags: tags elements exceeds the limit(8)",
     });
   });
 
